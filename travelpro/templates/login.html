@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'reg.css' %}">
+</head>
+<body>
+<div class="one">
+<form action="login" method="post">
+    {% csrf_token %}
+    <label >Login Here!</label><br><br>
+    <label>Username  </label> <input type="text" name="username" placeholder="username" required><br><br>
+    <label>Password      </label><input type="password" name="password" placeholder="password" required><br><br>
+    <input type="submit">
+</form>
+    <h1>
+    {% for i in messages %}
+    {{ i }}
+    {% endfor %}
+    </h1>
+</div>
+</body>
+</html>
